@@ -31,6 +31,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
@@ -39,6 +40,8 @@ let NERDTreeQuitOnOpen=1
 nmap <leader>nt :NERDTreeFind<CR>
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
+vmap ++ <plug>NERDCommenterToggle
+nmap ++ <plug>NERDCommenterToggle
 
 " kite
 let g:kite_supported_lenguagers = ["javascipt", "python"]
