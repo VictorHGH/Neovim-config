@@ -1,8 +1,8 @@
 " Some basics:
-set title "Muestra el titulo del archivo
+"Muestra el titulo del archivo
+set title 
 
 " Basic syntax highlight
-syntax enable
 syntax on
 
 "Numera las filas con el número relativo
@@ -77,22 +77,31 @@ Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
+" Completition
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'rizzatti/dash.vim'
+" Nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
+" Comenter
 Plug 'scrooloose/nerdcommenter'
-Plug 'frazrepo/vim-rainbow'
-Plug 'prettier/vim-prettier', {'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html']}
+" Prettier
+Plug 'prettier/vim-prettier', {'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html', 'python']}
+" Formating
 Plug 'sbdchd/neoformat'
+" Match quots, curlybraces etc
 Plug 'https://github.com/adelarsq/vim-matchit'
-"statusline
+"syntax highlight
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+" Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+" Latex
 Plug 'lervag/vimtex'
+" Preview outputs
 Plug 'metakirby5/codi.vim'
 
 call plug#end()
