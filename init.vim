@@ -26,6 +26,9 @@ autocmd vimenter * ++nested colorscheme gruvbox
 "Permitir el posicionamietno con el mouse
 set mouse=a
 
+" Set clipboard
+set clipboard=unnamed
+
 "Detect diferent filetypes
 filetype on
 filetype indent on
@@ -121,9 +124,11 @@ nnoremap j gj
 nnoremap gj j
 nnoremap k gk
 nnoremap gk k
+nmap <leader>r :NERDTree<CR>
 
 autocmd Filetype tex inoremap ;bf \textbf{}
 autocmd Filetype tex inoremap ;em \emph{}
+autocmd Filetype tex inoremap ;img \begin{figure}[h!]<CR>\center<CR>\includegraphics[width=0.4\textwidth]{img}<CR>\caption{}<CR>\end{figure}<ESC>/img<CR>cw
 map <leader><leader>o :set spell<CR>
 map <leader><leader>O :set nospell<CR>
 
