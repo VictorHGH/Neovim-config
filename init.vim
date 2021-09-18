@@ -106,31 +106,66 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
 " Preview outputs
 Plug 'metakirby5/codi.vim'
-
+" Vimwiki
+Plug 'vimwiki/vimwiki'
+" Tagbar
+Plug 'majutsushi/tagbar'
+" Jinja2
+Plug 'lepture/vim-jinja'
+" Indent lines
+Plug 'yggdroot/indentline'
+    
 call plug#end()
 
+let g:vimwiki_folding = 'list'
+let g:vimwiki_table_mappings = 0
 autocmd BufWrite, TextChanged, InsertLeave *.js Neoformat
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 let mapleader=" "
-let NERDTreeQuitOnOpen=1
-nmap <leader>nt :NERDTreeFind<CR>
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
+
+" Pylint
+set makeprg=pylint\ --reports=n\ --output-format-parseable\ %:p
+set errorformat=%f:%l:\ %m
+
+" Nerdtree
+let NERDTreeQuitOnOpen = 0
+nmap <leader>nt :NERDTreeFind<CR>
+let g:nerdtree_open = 0
+let NerdtreeIgnore = ['\.pyc$', '\.pyo$']
+let NerdtreeMinimalUI = 1
+
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
-nmap j gj
-nmap k gk
-nnoremap j gj
-nnoremap gj j
-nnoremap k gk
-nnoremap gk k
+noremap j gj
+noremap k gk
+noremap j gj
+noremap gj j
+noremap k gk
+noremap gk k
 nmap <leader>r :NERDTree<CR>
+nmap <leader>vw :vs ~/vimwiki/index.wiki<CR>
+map <leader>t :TagbarToggle<CR>
+nmap <leader>n :noh<CR>
 
-autocmd Filetype tex inoremap ;bf \textbf{}
-autocmd Filetype tex inoremap ;em \emph{}
+" indent/unindent with tab/shift-tab
+nmap <Tab> >>
+nmap <S-Tab> <<
+imap <S-Tab> <Esc><<i
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+
+nmap <leader>h gT
+nmap <leader>l gt
+
+autocmd Filetype tex inoremap ;bf \textbf{}<esc>i
+autocmd Filetype tex inoremap ;em \emph{}<esc>i
 autocmd Filetype tex inoremap ;img \begin{figure}[h!]<CR>\center<CR>\includegraphics[width=0.4\textwidth]{img}<CR>\caption{}<CR>\end{figure}<ESC>/img<CR>cw
 map <leader><leader>o :set spell<CR>
 map <leader><leader>O :set nospell<CR>
+nmap <leader><leader>c :Codi<CR>
+nmap <leader><leader>vm :VimtexTocOpen<CR>
 
 " COC
 source ~/.config/nvim/coc.nvim
@@ -152,3 +187,12 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" Moving text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-j> <esc>:m .-2<CR>==
+nnoremap <leader>k :m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+
