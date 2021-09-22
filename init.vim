@@ -114,6 +114,8 @@ Plug 'majutsushi/tagbar'
 Plug 'lepture/vim-jinja'
 " Indent lines
 Plug 'yggdroot/indentline'
+
+Plug 'csscomb/vim-csscomb'
     
 call plug#end()
 
@@ -130,10 +132,10 @@ set makeprg=pylint\ --reports=n\ --output-format-parseable\ %:p
 set errorformat=%f:%l:\ %m
 
 " Nerdtree
-let NERDTreeQuitOnOpen = 0
+let NERDTreeQuitOnOpen = 1
 nmap <leader>nt :NERDTreeFind<CR>
-let g:nerdtree_open = 0
-let NerdtreeIgnore = ['\.pyc$', '\.pyo$']
+let g:nerdtree_open = 1
+let NerdtreeIgnore = ['\.pyc$', '\.pyo$', '__pycache__[[dir]]']
 let NerdtreeMinimalUI = 1
 
 vmap ++ <plug>NERDCommenterToggle
@@ -196,3 +198,6 @@ inoremap <C-j> <esc>:m .-2<CR>==
 nnoremap <leader>k :m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 
+" add csscomb
+" Automatically comb your CSS on save
+autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb
