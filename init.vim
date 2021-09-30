@@ -110,8 +110,6 @@ Plug 'metakirby5/codi.vim'
 Plug 'vimwiki/vimwiki'
 " Tagbar
 Plug 'majutsushi/tagbar'
-" Jinja2
-Plug 'lepture/vim-jinja'
 " Indent lines
 Plug 'yggdroot/indentline'
 
@@ -137,6 +135,8 @@ nmap <leader>nt :NERDTreeFind<CR>
 let g:nerdtree_open = 1
 let NerdtreeIgnore = ['\.pyc$', '\.pyo$', '__pycache__[[dir]]']
 let NerdtreeMinimalUI = 1
+let NerdtreeShowLineNumbers = 1
+let NerdtreeWinSize = 40
 
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
