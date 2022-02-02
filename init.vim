@@ -5,6 +5,9 @@ set title
 " Basic syntax highlight
 syntax on
 
+" textwidth
+"set textwidth=80
+
 "Numera las filas con el número relativo
 set nu rnu 
 
@@ -90,7 +93,7 @@ Plug 'airblade/vim-gitgutter'
 " Comenter
 Plug 'scrooloose/nerdcommenter'
 " Prettier
-Plug 'prettier/vim-prettier', {'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html', 'python']}
+"Plug 'prettier/vim-prettier', {'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html', 'python']}
 " Formating
 Plug 'sbdchd/neoformat'
 " Match quots, curlybraces etc
@@ -107,9 +110,9 @@ Plug 'lervag/vimtex'
 " Preview outputs
 Plug 'metakirby5/codi.vim'
 " Vimwiki
-Plug 'vimwiki/vimwiki'
+"Plug 'vimwiki/vimwiki'
 " Tagbar
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 " Indent lines
 Plug 'yggdroot/indentline'
 
