@@ -167,6 +167,13 @@ nmap <leader>l gt
 autocmd Filetype tex inoremap ;bf \textbf{}<esc>i
 autocmd Filetype tex inoremap ;em \emph{}<esc>i
 autocmd Filetype tex inoremap ;img \begin{figure}[h!]<CR>\center<CR>\includegraphics[width=0.4\textwidth]{img}<CR>\caption{}<CR>\end{figure}<ESC>/img<CR>cw
+autocmd Filetype tex inoremap a;' <C-k>'a
+autocmd Filetype tex inoremap e;' <C-k>'e
+autocmd Filetype tex inoremap i;' <C-k>'i
+autocmd Filetype tex inoremap o;' <C-k>'o
+autocmd Filetype tex inoremap u;' <C-k>'u
+autocmd Filetype tex inoremap n;' <C-k>~n
+autocmd Filetype tex inoremap ;? <C-k>~?
 map <leader><leader>o :set spell<CR>
 map <leader><leader>O :set nospell<CR>
 nmap <leader><leader>c :Codi<CR>
