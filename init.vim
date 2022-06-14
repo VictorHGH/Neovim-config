@@ -5,9 +5,6 @@ set title
 " Basic syntax highlight
 syntax on
 
-" textwidth
-"set textwidth=80
-
 "Numera las filas con el número relativo
 set nu rnu 
 
@@ -43,7 +40,7 @@ set ic
 set smartcase
 
 "No compatible with vi
-set nocompatible
+"set nocompatible
 
 "show commands in screen
 set showcmd
@@ -85,39 +82,40 @@ Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 " Completition
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
+"
 " Comenter
 Plug 'scrooloose/nerdcommenter'
-" Prettier
-"Plug 'prettier/vim-prettier', {'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html', 'python']}
+"
 " Formating
-Plug 'sbdchd/neoformat'
+"Plug 'sbdchd/neoformat'
+
 " Match quots, curlybraces etc
 Plug 'https://github.com/adelarsq/vim-matchit'
-"syntax highlight
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
+
 " Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 " Latex
 Plug 'lervag/vimtex'
-" Preview outputs
-Plug 'metakirby5/codi.vim'
-" Vimwiki
-"Plug 'vimwiki/vimwiki'
-" Tagbar
-"Plug 'majutsushi/tagbar'
-" Indent lines
-Plug 'yggdroot/indentline'
 
-Plug 'csscomb/vim-csscomb'
-    
+" React, JSX, javascript
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
+
+" Format
+Plug 'sbdchd/neoformat'
+
 call plug#end()
 
 let g:vimwiki_folding = 'list'
@@ -150,8 +148,6 @@ noremap gj j
 noremap k gk
 noremap gk k
 nmap <leader>r :NERDTree<CR>
-nmap <leader>vw :vs ~/vimwiki/index.wiki<CR>
-map <leader>t :TagbarToggle<CR>
 nmap <leader>n :noh<CR>
 
 " indent/unindent with tab/shift-tab
@@ -161,38 +157,21 @@ imap <S-Tab> <Esc><<i
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
+" Move through windows
 nmap <leader>h gT
 nmap <leader>l gt
 
 autocmd Filetype tex inoremap ;bf \textbf{}<esc>i
 autocmd Filetype tex inoremap ;em \emph{}<esc>i
 autocmd Filetype tex inoremap ;img \begin{figure}[h!]<CR>\center<CR>\includegraphics[width=0.4\textwidth]{img}<CR>\caption{}<CR>\end{figure}<ESC>/img<CR>cw
-autocmd Filetype tex inoremap a;' <C-k>'a
-autocmd Filetype tex inoremap e;' <C-k>'e
-autocmd Filetype tex inoremap i;' <C-k>'i
-autocmd Filetype tex inoremap o;' <C-k>'o
-autocmd Filetype tex inoremap u;' <C-k>'u
 autocmd Filetype tex inoremap n;' <C-k>~n
 autocmd Filetype tex inoremap ;? <C-k>~?
 map <leader><leader>o :set spell<CR>
 map <leader><leader>O :set nospell<CR>
-nmap <leader><leader>c :Codi<CR>
 nmap <leader><leader>vm :VimtexTocOpen<CR>
 
 " COC
 source ~/.config/nvim/coc.nvim
-let g:coc_global_extentions = [
-  \ 'coc-snippets',
-  \ 'coc-pairs',
-  \ 'coc-tsserver',
-  \ 'coc-eslint',
-  \ 'coc-json',
-  \ 'coc-python',
-  \ 'coc-emmet',
-  \ 'coc-css',
-  \ 'coc-html',
-  \ 'coc-prettier',
-  \]
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -208,6 +187,23 @@ inoremap <C-j> <esc>:m .-2<CR>==
 nnoremap <leader>k :m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 
-" add csscomb
-" Automatically comb your CSS on save
-autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb
+" vimtex
+let g:latex_view_general_viewer = 'skim'
+let g:vimtex_view_method = 'skim'
+let g:vimtex_quickfix_mode=0
+
+let g:vimtex_compiler_latexmk = { 
+        \ 'executable' : 'latexmk',
+        \ 'options' : [ 
+        \   '-xelatex',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
+
+let g:vimtex_grammar_vlty = {'lt_command': 'languagetool'}
+set spelllang=es
+
+" Airline
+source ~/.config/nvim/themes/airline.vim
