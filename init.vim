@@ -116,6 +116,11 @@ Plug 'jparise/vim-graphql'
 " Format
 Plug 'sbdchd/neoformat'
 
+" Dash
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'mrjones2014/dash.nvim', { 'do': 'make install' }
+
 call plug#end()
 
 let g:vimwiki_folding = 'list'
