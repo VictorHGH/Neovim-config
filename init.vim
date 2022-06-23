@@ -171,8 +171,8 @@ autocmd Filetype tex inoremap ;em \emph{}<esc>i
 autocmd Filetype tex inoremap ;img \begin{figure}[h!]<CR>\center<CR>\includegraphics[width=0.4\textwidth]{img}<CR>\caption{}<CR>\end{figure}<ESC>/img<CR>cw
 autocmd Filetype tex inoremap n;' <C-k>~n
 autocmd Filetype tex inoremap ;? <C-k>~?
-map <leader><leader>o :set spell<CR>
-map <leader><leader>O :set nospell<CR>
+nmap <leader><leader>o :set spell<CR>
+nmap <leader><leader>O :set nospell<CR>
 nmap <leader><leader>vm :VimtexTocOpen<CR>
 
 " COC
@@ -191,6 +191,10 @@ inoremap <C-j> <esc>:m .+1<CR>==
 inoremap <C-j> <esc>:m .-2<CR>==
 nnoremap <leader>k :m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
+
+" Dash
+nmap <leader><leader>d :Dash<CR>
+nmap <leader><leader>da :DashWord<CR>
 
 " vimtex
 let g:latex_view_general_viewer = 'skim'
