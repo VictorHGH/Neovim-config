@@ -87,13 +87,16 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+
+" Git
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 "
 " Comenter
 Plug 'scrooloose/nerdcommenter'
 "
 " Formating
-"Plug 'sbdchd/neoformat'
+Plug 'sbdchd/neoformat'
 
 " Match quots, curlybraces etc
 Plug 'https://github.com/adelarsq/vim-matchit'
