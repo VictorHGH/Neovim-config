@@ -55,7 +55,7 @@ set encoding=utf-8
 set backspace=indent,eol,start
 "show corresponding open and close words, parentesis
 set showmatch
-set sw=2
+set sw=4
 set laststatus=2
 
 "search down into sub-folders / Provides tab completion for all file-related tasks
