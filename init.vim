@@ -99,6 +99,7 @@ Plug 'scrooloose/nerdcommenter'
 " Formating
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-surround'
+Plug 'AndrewRadev/tagalong.vim'
 
 " Match quots, curlybraces etc
 Plug 'https://github.com/adelarsq/vim-matchit'
