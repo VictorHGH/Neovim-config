@@ -80,6 +80,7 @@ Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
+
 " Completition
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -97,6 +98,7 @@ Plug 'scrooloose/nerdcommenter'
 "
 " Formating
 Plug 'sbdchd/neoformat'
+Plug 'tpope/vim-surround'
 
 " Match quots, curlybraces etc
 Plug 'https://github.com/adelarsq/vim-matchit'
