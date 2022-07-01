@@ -127,6 +127,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'mrjones2014/dash.nvim', { 'do': 'make install' }
 
+" Css
+Plug 'stephenway/postcss.vim'
+
 call plug#end()
 
 let g:vimwiki_folding = 'list'
