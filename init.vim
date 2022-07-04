@@ -53,6 +53,7 @@ set encoding=utf-8
 
 "Backspace through anything
 set backspace=indent,eol,start
+
 "show corresponding open and close words, parentesis
 set showmatch
 set sw=4
@@ -83,6 +84,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Completition
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'github/copilot.vim'
 
 " Nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -203,7 +205,7 @@ nnoremap <leader>j :m .+1<CR>==
 
 " Dash
 nmap <leader><leader>d :Dash<CR>
-nmap <leader><leader>da :DashWord<CR>
+nmap <leader><leader>DW :DashWord<CR>
 
 " vimtex
 let g:latex_view_general_viewer = 'skim'
