@@ -102,6 +102,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-surround'
 Plug 'AndrewRadev/tagalong.vim'
+Plug 'Yggdroot/indentLine'
 
 " Match quots, curlybraces etc
 Plug 'https://github.com/adelarsq/vim-matchit'
