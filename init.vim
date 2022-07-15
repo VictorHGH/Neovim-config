@@ -35,6 +35,9 @@ filetype indent on
 filetype plugin indent on
 filetype plugin on
 
+" Python mode
+let g:pymode_python = 'python3'
+
 "On upper or lower case search
 set ic
 set smartcase
@@ -73,6 +76,8 @@ set splitbelow splitright
 set rtp+=/usr/local/opt/fzf
 
 call plug#begin('~/.vim/plugged')
+" Own Plugings
+Plug '~/Documents/programacion_2.0/nvim/quote.nvim'
 
 "themes
 Plug 'morhetz/gruvbox'
@@ -103,6 +108,7 @@ Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-surround'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'kkharji/sqlite.lua'
 
 " Match quots, curlybraces etc
 Plug 'https://github.com/adelarsq/vim-matchit'
@@ -121,6 +127,9 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
+
+" Python
+Plug 'python-mode/python-mode'
 
 " Format
 Plug 'sbdchd/neoformat'
@@ -148,7 +157,7 @@ set makeprg=pylint\ --reports=n\ --output-format-parseable\ %:p
 set errorformat=%f:%l:\ %m
 
 " Nerdtree
-let NERDTreeQuitOnOpen = 1
+let NERDTreeQuitOnOpen = 0
 nmap <leader>nt :NERDTreeFind<CR>
 let g:nerdtree_open = 1
 let NerdtreeIgnore = ['\.pyc$', '\.pyo$', '__pycache__[[dir]]']
