@@ -134,6 +134,7 @@ Plug 'sheerun/vim-polyglot'
 " highlight
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 Plug 'p00f/nvim-ts-rainbow'
+Plug 'ap/vim-css-color'
 
 " Format
 Plug 'sbdchd/neoformat'
