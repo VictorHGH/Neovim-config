@@ -14,6 +14,10 @@ set colorcolumn=120
 "Insertar espacios en lugar de <TAB>'s
 set expandtab 
 
+" Fold
+set foldmethod=indent
+set nofoldenable
+
 "Permitir cambiar de buffers sin tener que guardar los cambios
 set hidden 
 
@@ -162,7 +166,7 @@ set makeprg=pylint\ --reports=n\ --output-format-parseable\ %:p
 set errorformat=%f:%l:\ %m
 
 " Nerdtree
-let NERDTreeQuitOnOpen = 0
+let NERDTreeQuitOnOpen = 1
 nmap <leader>nt :NERDTreeFind<CR>
 let g:nerdtree_open = 1
 let NerdtreeIgnore = ['\.pyc$', '\.pyo$', '__pycache__[[dir]]']
