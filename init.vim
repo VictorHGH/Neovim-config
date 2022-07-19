@@ -1,169 +1,13 @@
-" Some basics:
-"Muestra el titulo del archivo
-set title 
+" Basic options
+source ~/.config/nvim/src/options.vim
 
-" Basic syntax highlight
-syntax on
+" StatusLine
+source ~/.config/nvim/src/statusline.vim
 
-"Numera las filas con el número relativo
-set nu rnu 
+" Plugins
+source ~/.config/nvim/src/plugins.vim
 
-"Muestra la columna límite a 120 caracteres
-set colorcolumn=120 
-
-"Insertar espacios en lugar de <TAB>'s
-set expandtab 
-
-" Fold
-set foldmethod=indent
-set nofoldenable
-
-"Permitir cambiar de buffers sin tener que guardar los cambios
-set hidden 
-
-"Corregir palabras usando diccionarios en inglés y español
-set spelllang=en,es 
-
-"Color de tema
-autocmd vimenter * ++nested colorscheme gruvbox
-
-"Permitir el posicionamietno con el mouse
-set mouse=a
-
-" Set clipboard
-set clipboard=unnamed
-
-"Detect diferent filetypes
-filetype on
-filetype indent on
-filetype plugin indent on
-filetype plugin on
-
-" Python mode
-let g:pymode_python = 'python3'
-
-"On upper or lower case search
-set ic
-set smartcase
-
-"No compatible with vi
-"set nocompatible
-
-"show commands in screen
-set showcmd
-
-"Auto change directory
-set autochdir
-
-"Encoding
-set encoding=utf-8
-
-"Backspace through anything
-set backspace=indent,eol,start
-
-"show corresponding open and close words, parentesis
-set showmatch
-set sw=4
-set laststatus=2
-
-"search down into sub-folders / Provides tab completion for all file-related tasks
-set path+=** 
-
-"Display all matching files when we tab complete
-set wildmenu 
-
-"Scroll padding of 15 lines
-set scrolloff=15
-
-"Splits open at bottom and right, which is non-retarded, like vim defaults
-set splitbelow splitright 
-set rtp+=/usr/local/opt/fzf
-
-call plug#begin('~/.vim/plugged')
-" Own Plugings
-Plug '~/Documents/programacion_2.0/nvim/quote.nvim'
-
-"themes
-Plug 'morhetz/gruvbox'
-
-" IDE
-Plug 'easymotion/vim-easymotion'
-Plug 'scrooloose/nerdtree'
-Plug 'christoomey/vim-tmux-navigator'
-
-" Completition
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'github/copilot.vim'
-
-" Nerdtree
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
-
-" Git
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-"
-" Comenter
-Plug 'scrooloose/nerdcommenter'
-"
-" Formating
-Plug 'sbdchd/neoformat'
-Plug 'tpope/vim-surround'
-Plug 'AndrewRadev/tagalong.vim'
-Plug 'Yggdroot/indentLine'
-Plug 'kkharji/sqlite.lua'
-
-" Match quots, curlybraces etc
-Plug 'https://github.com/adelarsq/vim-matchit'
-
-" Statusline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Latex
-Plug 'lervag/vimtex'
-
-" React, JSX, javascript
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'jparise/vim-graphql'
-
-" Python
-Plug 'sheerun/vim-polyglot'
-
-" highlight
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
-Plug 'p00f/nvim-ts-rainbow'
-Plug 'ap/vim-css-color'
-
-" Format
-Plug 'sbdchd/neoformat'
-
-" Dash
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'mrjones2014/dash.nvim', { 'do': 'make install' }
-
-" Css
-Plug 'stephenway/postcss.vim'
-
-call plug#end()
-
-let g:vimwiki_folding = 'list'
-let g:vimwiki_table_mappings = 0
-autocmd BufWrite, TextChanged, InsertLeave *.js Neoformat
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-let mapleader=" "
-nmap <leader>w :w<CR>
-nmap <leader>q :q<CR>
-
-" Pylint
-set makeprg=pylint\ --reports=n\ --output-format-parseable\ %:p
-set errorformat=%f:%l:\ %m
 
 " Nerdtree
 let NERDTreeQuitOnOpen = 1
@@ -244,9 +88,6 @@ let g:vimtex_compiler_latexmk = {
 
 let g:vimtex_grammar_vlty = {'lt_command': 'languagetool'}
 set spelllang=es
-
-" Airline
-source ~/.config/nvim/themes/airline.vim
 
 lua << EOF
 require'nvim-treesitter.configs'.setup {
