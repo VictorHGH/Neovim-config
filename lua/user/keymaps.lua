@@ -26,8 +26,13 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>w", ":w<CR>", opts)
 keymap("n", "<leader>q", ":q<CR>", opts)
+keymap("n", "j", "gj", opts)
+keymap("n", "k", "gk", opts)
+keymap("n", "gj", "j", opts)
+keymap("n", "gk", "k", opts)
 
-keymap("n", "<leader>nt", ":Lex 30<CR>", opts)
+-- file browser
+keymap("n", "<leader>nt", ":NvimTreeOpen<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-w>", ":resize +2<CR>", opts)
@@ -45,8 +50,10 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+keymap("n", "<Tab>", ">>", opts)
+keymap("n", "<S-Tab>", "<<", opts)
+keymap("v", "<Tab>", ">gv", opts)
+keymap("v", "<S-Tab>", "<gv", opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
@@ -67,8 +74,17 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Spell
+keymap("n", "<leader><leader>o", ":set spell<CR>", term_opts)
+keymap("n", "<leader><leader>O", ":set nospell<CR>", term_opts)
+
+
 -- files --
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+keymap("n", "<leader>f", "<cmd>Telescope find_files<CR><ESC>", opts)
+--- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = 1 }))<cr>", opts)
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<CR>", opts)
