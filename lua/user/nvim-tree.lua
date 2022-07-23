@@ -6,7 +6,7 @@ if not status_ok then
 end
 
 nvim_tree.setup {
-  sync_root_with_cwd = true,
+  sync_root_with_cwd = false,
   reload_on_bufenter = true,
   respect_buf_cwd = true,
   sort_by = "case_sensitive",
