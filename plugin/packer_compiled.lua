@@ -129,10 +129,10 @@ _G.packer_plugins = {
     path = "/Users/VictorHGH/.local/share/nvim/site/pack/packer/start/indentLine",
     url = "https://github.com/Yggdroot/indentLine"
   },
-  ["null-ls.nvim"] = {
+  ["lualine.nvim"] = {
     loaded = true,
-    path = "/Users/VictorHGH/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+    path = "/Users/VictorHGH/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -198,6 +198,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/VictorHGH/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-floaterm"] = {
+    loaded = true,
+    path = "/Users/VictorHGH/.local/share/nvim/site/pack/packer/start/vim-floaterm",
+    url = "https://github.com/voldikss/vim-floaterm"
   },
   vimtex = {
     loaded = true,
