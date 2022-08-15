@@ -83,6 +83,8 @@ return packer.startup(function(use)
   }
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use "p00f/nvim-ts-rainbow"
+  -- use 'elel-dev/vim-astro-syntax'
+  use 'wuelnerdotexe/vim-astro'
 
   -- Git
   use "lewis6991/gitsigns.nvim"
@@ -92,6 +94,9 @@ return packer.startup(function(use)
 
   -- Floaterm
   use 'voldikss/vim-floaterm'
+
+  -- Github copilot
+  use 'github/copilot.vim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

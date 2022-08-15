@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/VictorHGH/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/Users/VictorHGH/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/VictorHGH/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -198,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/VictorHGH/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-astro"] = {
+    loaded = true,
+    path = "/Users/VictorHGH/.local/share/nvim/site/pack/packer/start/vim-astro",
+    url = "https://github.com/wuelnerdotexe/vim-astro"
   },
   ["vim-floaterm"] = {
     loaded = true,
