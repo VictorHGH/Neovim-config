@@ -6,7 +6,8 @@ if not status_ok then
 end
 
 nvim_tree.setup {
-  sync_root_with_cwd = false,
+  sync_root_with_cwd = true,
+  open_on_setup = true,
   reload_on_bufenter = true,
   respect_buf_cwd = true,
   sort_by = "case_sensitive",
@@ -29,7 +30,7 @@ nvim_tree.setup {
     }
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
   },
   actions = {
     open_file = {

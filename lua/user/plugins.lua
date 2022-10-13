@@ -49,6 +49,7 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
   use 'Yggdroot/indentLine'
+  use "AndrewRadev/tagalong.vim"
 
   -- ColorSheme
   use "morhetz/gruvbox"
@@ -97,6 +98,9 @@ return packer.startup(function(use)
 
   -- Github copilot
   use 'github/copilot.vim'
+
+  -- Easymotion
+  use 'easymotion/vim-easymotion'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
