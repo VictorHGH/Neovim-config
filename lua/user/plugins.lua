@@ -48,8 +48,8 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
-  use 'Yggdroot/indentLine'
   use "AndrewRadev/tagalong.vim"
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- ColorSheme
   use "morhetz/gruvbox"
@@ -101,6 +101,9 @@ return packer.startup(function(use)
 
   -- Easymotion
   use 'easymotion/vim-easymotion'
+
+  -- Vimwiki
+  use 'vimwiki/vimwiki'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
