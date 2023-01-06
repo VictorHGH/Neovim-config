@@ -10,6 +10,9 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Vimwiki
+vim.g.vimwiki_list = {{path = '~/Documents/vimwiki/', syntax = 'markdown', ext = '.md'}}
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -30,6 +33,9 @@ keymap("n", "j", "gj", opts)
 keymap("n", "k", "gk", opts)
 keymap("n", "gj", "j", opts)
 keymap("n", "gk", "k", opts)
+
+-- Coancellevel
+keymap("n", "<C-c>", ":set conceallevel=0<CR>", opts)
 
 -- file browser
 keymap("n", "<leader>nt", ":NvimTreeOpen<CR>", opts)
