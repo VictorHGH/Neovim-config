@@ -7,7 +7,6 @@ end
 
 nvim_tree.setup {
   sync_root_with_cwd = true,
-  open_on_setup = true,
   reload_on_bufenter = true,
   respect_buf_cwd = true,
   sort_by = "case_sensitive",
@@ -39,6 +38,25 @@ nvim_tree.setup {
   },
 }
 
+-- nvim tree
+local function open_nvim_tree(data)
+
+  -- buffer is a directory
+  local directory = vim.fn.isdirectory(data.file) == 1
+
+  if not directory then
+    return
+  end
+
+  -- change to the directory
+  vim.cmd.cd(data.file)
+
+  -- open the tree
+  require("nvim-tree.api").tree.open()
+end
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
 -- ["u"]              = tree_cb("dir_up"),
 -- ["<CR>"]           = tree_cb("edit"),
 -- ["o"]              = tree_cb("edit"),
@@ -67,3 +85,4 @@ nvim_tree.setup {
 -- ["]c"]             = tree_cb("next_git_item"),
 -- ["-"]              = tree_cb("dir_up"),
 -- ["q"]              = tree_cb("close"),
+-- ["s"]              = open_file

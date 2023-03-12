@@ -9,6 +9,7 @@ local keymap = vim.api.nvim_set_keymap
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.g.vimwiki_conceallevel = 0
 
 -- Vimwiki
 vim.g.vimwiki_list = {{path = '~/Documents/vimwiki/', syntax = 'markdown', ext = '.md'}}
@@ -34,9 +35,14 @@ keymap("n", "k", "gk", opts)
 keymap("n", "gj", "j", opts)
 keymap("n", "gk", "k", opts)
 keymap("n", "<leader>wx", ":VimwikiToggleListItem<CR>", opts)
+keymap("n", "<leader><leader>g", ":Goyo 90%x90%<CR>", opts)
+keymap("n", "<leader><leader>G", ":Goyo!<CR>", opts)
 
 -- Coancellevel
 keymap("n", "<C-c>", ":set conceallevel=0<CR>", opts)
+
+-- Format
+keymap("n", '<leader>F', ":Format<CR>", opts)
 
 -- file browser
 keymap("n", "<leader>nt", ":NvimTreeOpen<CR>", opts)
