@@ -86,7 +86,7 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-keymap("n", "<leader><leader>l", ":FloatermNew lazygit<CR>", opts)
+keymap("n", "<leader><leader>l", ':FloatermNew --height=0.9 --width=0.9 lazygit<CR>', opts)
 
 -- Spell
 keymap("n", "<leader><leader>o", ":set spell<CR>", term_opts)
