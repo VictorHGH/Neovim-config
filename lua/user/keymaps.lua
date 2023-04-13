@@ -11,6 +11,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.vimwiki_conceallevel = 0
 
+--LSP
+keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+
 -- Vimwiki
 vim.g.vimwiki_list = {{path = '~/Documents/vimwiki/', syntax = 'markdown', ext = '.md'}}
 

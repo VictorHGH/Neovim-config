@@ -74,6 +74,8 @@ return packer.startup(function(use)
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig" -- enable LSP
+  use "jose-elias-alvarez/null-ls.nvim"
+  use "lukas-reineke/lsp-format.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -85,7 +87,6 @@ return packer.startup(function(use)
   }
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use "p00f/nvim-ts-rainbow"
-  -- use 'elel-dev/vim-astro-syntax'
   use 'wuelnerdotexe/vim-astro'
 
   -- Git
