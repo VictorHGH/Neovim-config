@@ -15,7 +15,7 @@ vim.g.vimwiki_conceallevel = 0
 keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
 -- Vimwiki
-vim.g.vimwiki_list = {{path = '~/Documents/vimwiki/', syntax = 'markdown', ext = '.md'}}
+vim.g.vimwiki_list = { { path = "~/Documents/vimwiki/", syntax = "markdown", ext = ".md" } }
 
 -- Modes
 --   normal_mode = "n",
@@ -45,7 +45,7 @@ keymap("n", "<leader><leader>G", ":Goyo!<CR>", opts)
 keymap("n", "<C-c>", ":set conceallevel=0<CR>", opts)
 
 -- Format
-keymap("n", '<leader>F', ":Format<CR>", opts)
+keymap("n", "<leader>F", ":Format<CR>", opts)
 
 -- file browser
 keymap("n", "<leader>nt", ":NvimTreeOpen<CR>", opts)
@@ -89,7 +89,7 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-keymap("n", "<leader><leader>l", ':FloatermNew --height=0.9 --width=0.9 lazygit<CR>', opts)
+keymap("n", "<leader><leader>l", ":FloatermNew --height=0.9 --width=0.9 lazygit<CR>", opts)
 
 -- Spell
 keymap("n", "<leader><leader>o", ":set spell<CR>", term_opts)
