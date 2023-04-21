@@ -1,127 +1,93 @@
-local fn = vim.fn
-
--- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
     "git",
     "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-  print "Installing packer close and reopen Neovim..."
-  vim.cmd [[packadd packer.nvim]]
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
-
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
-
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
-end
-
--- Have packer use a popup window
-packer.init {
-  display = {
-    open_fn = function()
-      return require("packer.util").float { border = "rounded" }
-    end,
-  },
-}
+vim.opt.rtp:prepend(lazypath)
 
 -- Install your plugins here
-return packer.startup(function(use)
+local plugins = {
   -- My plugins here
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "numToStr/Comment.nvim" -- Easily comment stuff
-  use 'kyazdani42/nvim-web-devicons'
-  use 'kyazdani42/nvim-tree.lua'
-  use "AndrewRadev/tagalong.vim"
-  use "lukas-reineke/indent-blankline.nvim"
+  "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
+  "windwp/nvim-autopairs", -- Autopairs integrates with both cmp and treesitter
+  "numToStr/Comment.nvim", -- Easily comment stuff
+  "kyazdani42/nvim-web-devicons",
+  'kyazdani42/nvim-tree.lua',
+  "AndrewRadev/tagalong.vim",
+  "lukas-reineke/indent-blankline.nvim",
 
   -- ColorSheme
-  use "morhetz/gruvbox"
+  "morhetz/gruvbox",
 
   -- Vimtex
-  use "lervag/vimtex"
+  "lervag/vimtex",
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
+  "hrsh7th/nvim-cmp", -- The completion plugin
+  "hrsh7th/cmp-buffer", -- buffer completions
+  "hrsh7th/cmp-path", -- path completions
+  "hrsh7th/cmp-cmdline", -- cmdline completions
+  "saadparwaiz1/cmp_luasnip", -- snippet completions
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-nvim-lua",
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  "L3MON4D3/LuaSnip", --snippet engine
+  "rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
   -- LSP
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "jose-elias-alvarez/null-ls.nvim"
-  use "lukas-reineke/lsp-format.nvim"
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig", -- enable LSP
+  "jose-elias-alvarez/null-ls.nvim",
+  "lukas-reineke/lsp-format.nvim",
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  "nvim-telescope/telescope.nvim",
 
   -- Tresitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
-  use "p00f/nvim-ts-rainbow"
-  use 'wuelnerdotexe/vim-astro'
+  "nvim-treesitter/nvim-treesitter",
+  'JoosepAlviste/nvim-ts-context-commentstring',
+  "p00f/nvim-ts-rainbow",
+  'wuelnerdotexe/vim-astro',
 
   -- Git
-  use "lewis6991/gitsigns.nvim"
+  "lewis6991/gitsigns.nvim",
 
   -- Lualine
-  use "nvim-lualine/lualine.nvim"
+  "nvim-lualine/lualine.nvim",
 
   -- Floaterm
-  use 'voldikss/vim-floaterm'
+  'voldikss/vim-floaterm',
 
   -- Github copilot
-  use 'github/copilot.vim'
+  'github/copilot.vim',
 
   -- Easymotion
-  use 'easymotion/vim-easymotion'
+  'easymotion/vim-easymotion',
 
   -- Vimwiki
-  use 'vimwiki/vimwiki'
+  'vimwiki/vimwiki',
 
   -- install without yarn or npm
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
+  "iamcco/markdown-preview.nvim",
 
   -- Goyo
-  use 'junegunn/goyo.vim'
+  'junegunn/goyo.vim',
 
   -- jsx
-  use 'mxw/vim-jsx'
+  'mxw/vim-jsx',
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
-end)
+  -- rest client
+  'NTBBloodbath/rest.nvim',
+}
+
+local opts = {}
+
+require("lazy").setup(plugins, opts)
