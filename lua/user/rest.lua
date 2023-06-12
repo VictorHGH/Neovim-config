@@ -18,7 +18,7 @@ rest_nvim.setup({
     -- toggle  showing URL, HTTP info, headers at top the result window
     show_url = true,
     show_http_info = true,
-    show_headers = true,
+    show_headers = false,
   },
   -- Jump to request line on run
   jump_to_request = false,

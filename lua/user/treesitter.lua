@@ -14,7 +14,10 @@ configs.setup({
     "lua",
     "astro",
     "json",
+    "htmldjango",
+    "http",
   },
+
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
@@ -22,15 +25,10 @@ configs.setup({
     disable = { "" },     -- list of language that will be disabled
     additional_vim_regex_highlighting = true,
   },
-  indent = { enable = true, disable = { "yaml" } },
+  indent = { enable = true, disable = {} },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
-  },
-  rainbow = {
-    enable = true,
-    extended_mode = true,
-    max_file_lines = nil,
   },
   autopairs = {
     enable = true,

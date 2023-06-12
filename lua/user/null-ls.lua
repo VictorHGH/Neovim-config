@@ -17,9 +17,11 @@ null_ls.setup({
     formatting.standardjs,
     formatting.stylua,
     formatting.black,
+    formatting.prettier,
 
     --[[ diagnostics ]]
-    diagnostics.pylint,
+    diagnostics.flake8,
     diagnostics.standardjs,
+    diagnostics.tidy,
   },
 })

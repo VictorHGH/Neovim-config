@@ -55,7 +55,6 @@ local plugins = {
   -- Tresitter
   "nvim-treesitter/nvim-treesitter",
   "JoosepAlviste/nvim-ts-context-commentstring",
-  "p00f/nvim-ts-rainbow",
   "wuelnerdotexe/vim-astro",
 
   -- Git
@@ -91,6 +90,9 @@ local plugins = {
   --vim js
   "pangloss/vim-javascript",
   "maxmellon/vim-jsx-pretty",
+
+  -- html
+  "mattn/emmet-vim",
 }
 
 local opts = {}

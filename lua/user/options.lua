@@ -39,4 +39,14 @@ vim.opt.shortmess:append("c")
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
-vim.cmd("autocmd BufNewFile,BufRead *.js set filetype=javascript")
+
+local pipenv_venv_path = vim.fn.system("pipenv --venv")
+if vim.v.shell_error == 0 then
+  local venv_path = string.gsub(pipenv_venv_path, "\n", "")
+  vim.g.python3_host_prog = venv_path .. "/bin/python3"
+else
+  vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
+end
+
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
