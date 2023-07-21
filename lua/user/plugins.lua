@@ -76,7 +76,7 @@ local plugins = {
   "vimwiki/vimwiki",
 
   -- install without yarn or npm
-  "iamcco/markdown-preview.nvim",
+  "suan/vim-instant-markdown",
 
   -- Goyo
   "junegunn/goyo.vim",

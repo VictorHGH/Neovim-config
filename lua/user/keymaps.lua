@@ -53,7 +53,7 @@ keymap("n", "<leader>nt", ":NvimTreeOpen<CR>", opts)
 -- Resize with arrows
 keymap("n", "<C-w>", ":resize +2<CR>", opts)
 keymap("n", "<C-s>", ":resize -2<CR>", opts)
-keymap("n", "<C-d>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-f>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-a>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers

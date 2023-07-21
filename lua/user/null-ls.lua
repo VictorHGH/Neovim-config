@@ -16,7 +16,9 @@ null_ls.setup({
     --[[ formating ]]
     formatting.standardjs,
     formatting.stylua,
-    formatting.black,
+    formatting.black.with({
+      extra_args = { "--line-length", "79" },
+    }),
     formatting.prettier,
 
     --[[ diagnostics ]]
