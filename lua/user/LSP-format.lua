@@ -1,5 +1,4 @@
 local lspconfig = require("lspconfig")
-local configs = require("lspconfig/configs")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 require("lsp-format").setup({})
@@ -118,6 +117,39 @@ lspconfig.bashls.setup({
   root_dir = function()
     return vim.loop.cwd()
   end,
+})
+
+-- lspconfig for latex
+lspconfig.texlab.setup({
+  cmd = { "texlab" },
+  filetypes = { "tex", "bib" },
+  settings = {
+    texlab = {
+      auxDirectory = ".",
+      bibtexFormatter = "texlab",
+      build = {
+        args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+        executable = "latexmk",
+        forwardSearchAfter = false,
+        onSave = false,
+      },
+      chktex = {
+        onEdit = false,
+        onOpenAndSave = false,
+      },
+      diagnosticsDelay = 300,
+      formatterLineLength = 80,
+      forwardSearch = {
+        args = {},
+        executable = "zathura",
+        onSave = false,
+      },
+      latexFormatter = "latexindent",
+      latexindent = {
+        modifyLineBreaks = false,
+      },
+    },
+  },
 })
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
