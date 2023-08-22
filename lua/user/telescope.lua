@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 local actions = require("telescope.actions")
+local trouble = require("trouble.providers.telescope")
 
 telescope.setup({
   defaults = {
@@ -33,8 +34,10 @@ telescope.setup({
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
         ["<C-l>"] = actions.complete_tag,
         ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
+        ["<C-w>"] = trouble.open_with_trouble,
       },
       n = {
+        ["<C-w"] = trouble.open_with_trouble,
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
