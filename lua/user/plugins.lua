@@ -44,16 +44,8 @@ local plugins = {
 
   -- LSP
   "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
-  "neovim/nvim-lspconfig", -- enable LSP
+  "neovim/nvim-lspconfig",
   "lukas-reineke/lsp-format.nvim",
-  "folke/trouble.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-  opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  },
 
   -- Telescope
   "nvim-telescope/telescope.nvim",
@@ -81,24 +73,11 @@ local plugins = {
   -- Vimwiki
   "vimwiki/vimwiki",
 
-  -- install without yarn or npm
+  -- markdown
   "suan/vim-instant-markdown",
-
-  -- Goyo
-  "junegunn/goyo.vim",
-
-  -- jsx
-  "mxw/vim-jsx",
 
   -- rest client
   "NTBBloodbath/rest.nvim",
-
-  --vim js
-  "pangloss/vim-javascript",
-  "maxmellon/vim-jsx-pretty",
-
-  -- html
-  "mattn/emmet-vim",
 }
 
 local opts = {}

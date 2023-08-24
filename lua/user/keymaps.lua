@@ -38,8 +38,6 @@ keymap("n", "k", "gk", opts)
 keymap("n", "gj", "j", opts)
 keymap("n", "gk", "k", opts)
 keymap("n", "<leader>wx", ":VimwikiToggleListItem<CR>", opts)
-keymap("n", "<leader><leader>g", ":Goyo 90%x90%<CR>", opts)
-keymap("n", "<leader><leader>G", ":Goyo!<CR>", opts)
 
 -- Coancellevel
 keymap("n", "<C-c>", ":set conceallevel=0<CR>", opts)
