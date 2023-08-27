@@ -22,11 +22,14 @@ local servers = {
   pylsp = {},
   clangd = {},
   bashls = {},
-  texlab = {}
+  texlab = {},
+  marksman = {},
 }
 
 for server, config in pairs(servers) do
-  config.on_attach = lsp_format.on_attach
+  config.on_attach = function(client)
+    lsp_format.on_attach(client)
+  end
   config.capabilities = capabilities
   lspconfig[server].setup(config)
 end

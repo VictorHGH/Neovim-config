@@ -44,6 +44,7 @@ local plugins = {
 
   -- LSP
   "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
   "lukas-reineke/lsp-format.nvim",
 
