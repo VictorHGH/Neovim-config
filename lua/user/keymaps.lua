@@ -9,13 +9,13 @@ local keymap = vim.api.nvim_set_keymap
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.g.vimwiki_conceallevel = 0
 
 --LSP
 keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
 -- Vimwiki
 vim.g.vimwiki_list = { { path = "~/Documents/vimwiki/", syntax = "markdown", ext = ".md" } }
+vim.g.vimwiki_conceallevel = 0
 
 -- Modes
 --   normal_mode = "n",
@@ -39,12 +39,6 @@ keymap("n", "gj", "j", opts)
 keymap("n", "gk", "k", opts)
 keymap("n", "<leader>wx", ":VimwikiToggleListItem<CR>", opts)
 
--- Coancellevel
-keymap("n", "<C-c>", ":set conceallevel=0<CR>", opts)
-
--- Format
-keymap("n", "<leader>F", ":Format<CR>", opts)
-
 -- file browser
 keymap("n", "<leader>nt", ":NvimTreeOpen<CR>", opts)
 
@@ -57,10 +51,6 @@ keymap("n", "<C-a>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
--- Insert --
--- Press jk fast to enter
--- keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
