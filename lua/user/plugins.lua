@@ -83,7 +83,7 @@ local plugins = {
   -- Bracery as live-server
   {
     'turbio/bracey.vim',
-    build = "cd server && npm install",
+    build = "cd server && npm install && ncu -u && npm install && npm audit fix",
   },
 }
 
