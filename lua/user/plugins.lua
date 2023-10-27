@@ -80,11 +80,6 @@ local plugins = {
   -- rest client
   "NTBBloodbath/rest.nvim",
 
-  -- Bracery as live-server
-  {
-    'turbio/bracey.vim',
-    build = "cd server && npm install",
-  },
 }
 
 local opts = {}
