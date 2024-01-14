@@ -74,9 +74,6 @@ local plugins = {
   -- Vimwiki
   "vimwiki/vimwiki",
 
-  -- markdown
-  "suan/vim-instant-markdown",
-
   -- rest client
   "NTBBloodbath/rest.nvim",
 
