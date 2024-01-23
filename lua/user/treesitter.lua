@@ -16,6 +16,7 @@ configs.setup({
     "json",
     "htmldjango",
     "http",
+    "csv",
   },
 
   sync_install = false,
