@@ -25,6 +25,7 @@ local servers = {
   texlab = {},
   marksman = {},
   rust_analyzer = {},
+  intelephense = {},
 }
 
 for server, config in pairs(servers) do

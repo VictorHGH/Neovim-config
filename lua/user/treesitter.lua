@@ -17,6 +17,11 @@ configs.setup({
     "htmldjango",
     "http",
     "csv",
+    "php",
+    "cpp",
+    "c",
+    "c_sharp",
+    "vim",
   },
 
   sync_install = false,

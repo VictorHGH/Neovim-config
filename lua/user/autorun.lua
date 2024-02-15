@@ -11,6 +11,8 @@ local function setup_python_execution()
     "autocmd Filetype sh nnoremap <buffer> <localleader>r :vs<CR>:term bash %<CR>:startinsert<CR>")
   vim.api.nvim_command(
     "autocmd Filetype rust nnoremap <buffer> <localleader>r :vs<CR>:term rustc % && ./main<CR>:startinsert<CR>")
+  vim.api.nvim_command(
+    "autocmd Filetype cpp nnoremap <buffer> <localleader>r :vs<CR>:term g++ % -o main && ./main<CR>:startinsert<CR>")
   vim.api.nvim_command("augroup END")
 end
 
