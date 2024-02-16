@@ -89,8 +89,6 @@ local function on_attach(bufnr)
   -- Mappings migrated from view.mappings.list
   --
   -- You will need to insert "your code goes here" for any mappings with a custom action_cb
-  vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts("Up"))
-  vim.keymap.set("n", "v", api.node.open.vertical, opts(":Open: Vertical Split"))
 end
 
 nvim_tree.setup({
